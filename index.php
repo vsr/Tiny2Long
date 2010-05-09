@@ -99,25 +99,7 @@ Small Url :<input name="tinyurl" type="text" value="<?php echo $_POST['tinyurl']
 </form>
 
 <p class='c'>tiny2long also has an <a href='api.html'>API</a>. The source code is available <a href='index.phps'>here</a>.</p>
-<?php
-if(isset($_POST['tinyurl'])){
-echo <<<ADTEXT
-<div id='ad'>
-<script type="text/javascript"><!--
-google_ad_client = "pub-7576293061984551";
-/* 234x60, created 7/9/09 */
-google_ad_slot = "4364229858";
-google_ad_width = 234;
-google_ad_height = 60;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-</div>
-ADTEXT;
-}
-?>
+
 
 <p id='credits'>app by <a href='http://vinayraikar.com'>vsr</a> | More apps at <a href='http://wg.vinayraikar.com/apps/'>apps</a</p>
 </body>
