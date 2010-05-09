@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+
+<title>Tiny2Long - API</title>
+<link href="style.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js'></script>
+<script>
+$(function(){
+
+function elongate(){
+var url='http://wg.vinayraikar.com/apps/t2l/?api=api'
+$.each(document.links,function(i,l){
+	url+='&url[]='+l;
+});
+
+	$.ajax({
+	  dataType: 'jsonp',
+	  url: url,
+	  success: function (data) {
+		$.each(data,function(ti,lo){
+	
+			$.each(document.links,function(i,j){if(ti==j && lo!=''){     $(j).html(lo).attr('href',lo);}});
+	
+		});
+	  },
+	});
+
+}
+
+$("#changeurl").click(function(){elongate()});
+
+});
+</script>
+
+<body>
+<h1><a href="http://wg.vinayraikar.com/apps/t2l/">tiny2long</a></h1>
+<h3><a href="http://wg.vinayraikar.com/apps/t2l/api.html">API</a></h3>
+
+<div id='api'>
+
+<p> tiny2long has a simple api which returns long urls in json format. </p>
+<div>
+<h4>Sample usage:</h4><br/>
+<h5># simple single url</h5>
+URL:<br/>
+<div class='code'>http://wg.vinayraikar.com/apps/t2l/?api=api&url=http://bit.ly/tiny2long</div> 
+<br/>
+Response:<br/>
+<div class='code'>{"http:\/\/bit.ly\/tiny2long":"http:\/\/wg.vinayraikar.com\/apps\/t2l\/"}</div>
+<br/><br/>
+<h5># multiple urls</h5>
+URL:<br/>
+<div class='code'>http://wg.vinayraikar.com/apps/t2l/?api=api&url[]=http://bit.ly/tiny2long&url[]=http://bit.ly/kHRQK</div>
+<br/>
+Response: <br/>
+<div class='code'>{"http:\/\/bit.ly\/tiny2long":"http:\/\/wg.vinayraikar.com\/apps\/t2l\/","http:\/\/bit.ly\/kHRQK":"http:\/\/http:\/vinayraikar.com"}</div>
+<br/><br/>
+<h5># with callback function</h5>
+URL:<br/>
+<div class='code'>http://wg.vinayraikar.com/apps/t2l/?api=api&url=http://bit.ly/tiny2long&callback=changeurl</div>
+<br/>
+Response: <br/>
+<div class='code'>changeurl({"http:\/\/bit.ly\/tiny2long":"http:\/\/wg.vinayraikar.com\/apps\/t2l\/"})</div>
+</div>
+<h4>Including javascript to change</h4>
+<div>
+<p>Here is a simple example of how to use this to change tiny urls in a page using javascript</p>
+<p>Include this piece of javascript in your page and call the elongate function to elongate them</p>
+<pre>
+&lt;script src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js'&gt;&lt;/script&gt;
+&lt;script&gt;
+$(function(){
+function elongate(){
+	var url='http://localhost/vinayraikar/apps/t2l/?api=api'
+	$.each(document.links,function(i,l){
+		url+='&amp;url[]='+l;
+	});
+	$.ajax({
+	  dataType: 'jsonp',
+	  url: url,
+	  success: function (data) {
+		$.each(data,function(ti,lo){
+			$.each(document.links,function(i,j){
+						if(ti==j &amp;&amp; lo!='')
+							{$(j).html(lo).attr('href',lo);}
+			});
+	
+		});
+	  },
+	});
+
+}
+&lt;/script&gt;
+</pre>
+<p>Well, this is just a sample text to see how you can change short urls to their original long urls.</p>
+<ul>
+<li> <a href='http://bit.ly/zvZZ9'>http://bit.ly/zvZZ9</a></li>
+<li> <a href='http://cli.gs/rQQARt'>http://cli.gs/rQQARt</a></li>
+<li> <a href='http://tinyurl.com/yp8cba'>http://tinyurl.com/yp8cba</a></li>
+<li> <a href='http://tinyurl.com/my-moto-c168'>http://tinyurl.com/my-moto-c168</a></li>
+</ul><br/>
+<button id="changeurl">turn tiny urls to long urls!</button>
+</div>
+
+</div>
+
+
+
+<div id='ad'>
+<script type="text/javascript"><!--
+google_ad_client = "pub-7576293061984551";
+/* 234x60, created 7/9/09 */
+google_ad_slot = "4364229858";
+google_ad_width = 234;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<p id='credits'>app by <a href='http://vinayraikar.com'>vsr</a> | More apps at <a href='http://wg.vinayraikar.com/apps/'>apps</a</p>
+</body>
+</html>

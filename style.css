@@ -1,0 +1,24 @@
+*{padding:0px;margin:0px;}
+input[type=text]{text-align:left;font-size:0.9em;border:1px solid #232323;padding:3px;}
+h1{font-size:1.7em;padding-bottom:20px;text-align:center;}
+h3{font-size:1.2em;padding-bottom:5px;text-align:center;margin:0px;}
+h1 a,h3 a{color:#040506;text-decoration:none;}
+h1 a:hover,h3 a:hover{color:#050607;text-decoration:none;}
+body{font-family:Trebuchet MS,Helvetica,sans-serif;}
+p{padding:10px;line-height:165%;}
+form{padding:10px;margin:10px auto;width:600px;text-align:center;}
+.urlinput{background-color:#F7F7F7;border:1px solid #aeaeae;}
+a.longurl {font-size:1.1em;color:#00868B;text-decoration:none;}
+a.longurl:hover {color:#00C5CD;border-bottom:1px dotted #457F9F;}
+#credits{font-size:1.1em;text-align:center;}
+#credits a{color:#232323;text-decoration:none;}
+#credits a:hover{color:#323232;text-decoration:underline;}
+.error{color:red;border:1px solid #990000;border:1px solid #ff0000;}
+#result{width:600px;margin:5px auto;padding:5px;text-align:center;font-size:1.2em;}
+#ad{margin:50px auto;width:250px;}
+#api{text-align:left;width:650px;margin:20px auto;font-size:1.1em;}
+.code{letter-spacing:0.05em;line-height:1.5em;padding:0 1em;background-color:#f4f4f4;}
+a{color:#005C8F;}
+#api>div{padding:5px;}
+#api h3{text-align:center;}
+.c{text-align:center;}
